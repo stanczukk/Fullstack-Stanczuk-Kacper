@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant Browser as Przeglądarka
+    participant Server as Serwer
+
+    Browser->>Server: GET /exampleapp/spa
+    Server-->>Browser: HTML document
+
+    Browser->>Server: GET /exampleapp/main.css
+    Server-->>Browser: CSS file
+
+    Browser->>Server: GET /exampleapp/spa.js
+    Server-->>Browser: JavaScript file
+
+    Note over Browser: Przeglądarka wykonuje kod spa.js
+
+    Browser->>Server: GET /exampleapp/data.json
+    Server-->>Browser: JSON z listą notatek
+
+    Note over Browser: JavaScript renderuje notatki na stronie
